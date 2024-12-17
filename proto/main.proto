@@ -12,6 +12,7 @@ enum MetricType {
 message IngestRequest {
   double value = 1;
   MetricType metric_type = 2;
+  uint64 time = 3;
 }
 
 message IngestResponse {
