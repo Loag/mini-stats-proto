@@ -10,9 +10,10 @@ enum MetricType {
 }
 
 message IngestRequest {
-  double value = 1;
-  MetricType metric_type = 2;
-  uint64 time = 3;
+  string name = 1;
+  double value = 2;
+  MetricType metric_type = 3;
+  uint64 time = 4;
 }
 
 message IngestResponse {
