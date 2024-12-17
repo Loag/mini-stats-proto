@@ -1,0 +1,27 @@
+{
+  "name": "mini-stats-proto-dev",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/go": {},
+    "ghcr.io/devcontainers-extra/features/protoc:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "go.lintFlags": [
+          "--enable-all",
+          "--new"
+        ],
+        "go.useLanguageServer": true
+      },
+      "extensions": [
+        "golang.go",
+        "enkia.tokyo-night",
+        "ms-azuretools.vscode-docker",
+        "PKief.material-icon-theme",
+        "zxh404.vscode-proto3"
+      ]
+    }
+  },
+  "postCreateCommand": "chmod +x .devcontainer/postCreate.sh && .devcontainer/postCreate.sh"
+}

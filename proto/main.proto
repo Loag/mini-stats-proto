@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package rpc;
+option go_package = ".;rpc";
+
+enum MetricType {
+  UNSPECIFIED = 0; // Default value
+  COUNTER = 1;
+  GAUGE = 2;
+}
+
+message IngestRequest {
+  double value = 1;
+  MetricType metric_type = 2;
+}
+
+message IngestResponse {
+  uint32 status = 1;
+}
+
+service IngestService {
+    rpc Ingest (IngestRequest) returns (IngestResponse);
+}
